@@ -1,0 +1,6 @@
+.DS_Store
+!.gitkeep
+
+/node_modules
+package-lock.json
+/code/sample-data.json

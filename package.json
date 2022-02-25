@@ -1,0 +1,13 @@
+{
+  "name": "wdp-ui-code-test",
+  "version": "0.1.1",
+  "description": "WDP UI Code Test",
+  "scripts": {
+    "setup": "node ./materials/scripts/generate.js"
+  },
+  "author": "Westpac AU",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "faker": "^4.1.0"
+  }
+}
