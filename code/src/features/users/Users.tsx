@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Table from "components/table/Table";
-import { User} from "./Users.interface"
+import { User } from "./Users.interface";
+import usePagination from "components/pagination/usePagination";
+import Pagination from "components/pagination/Pagination";
 
 const Users = () => {
 	const [data, setData] = useState([]);
@@ -14,18 +16,37 @@ const Users = () => {
 	useEffect(() => {
 		fetch("/sample-data.json")
 			.then((res) => res.json())
-			.then(res => res?.employees.map(( user: User) => ({
-				name: user.firstName + user.lastName,
-				id: `${user.id.substring(0,4)}...`,
-				contactNo: user.contactNo,
-				address: user.address
-			})))
+			.then((res) =>
+				res?.employees.map((user: User) => ({
+					name: user.firstName + user.lastName,
+					id: `${user.id.substring(0, 4)}...`,
+					contactNo: user.contactNo,
+					address: user.address,
+				}))
+			)
 			.then((res) => setData(res));
 	}, []);
 
+	const itemsPerPage = 8;
+	const totalPages = Math.ceil(data.length / itemsPerPage);
+
+	const { currentPage, setCurrentPage } = usePagination({
+		totalPages,
+	});
+
+	const paginatedData = data.slice(
+		(currentPage - 1) * itemsPerPage,
+		currentPage * itemsPerPage
+	);
+
 	return (
 		<div className="App">
-			<Table headers={headers} data={data} />
+			<Table headers={headers} data={paginatedData} />
+			<Pagination
+				currentPage={currentPage}
+				handlePageChange={setCurrentPage}
+				totalPages={totalPages}
+			/>
 		</div>
 	);
 };

@@ -21,6 +21,7 @@ export const StyledTH = styled.th<Cell>`
 	background-color: #f5f5f5;
 	border: 1px solid #ddd;
 	min-width: ${({ columnSpan }) => columnSpan * 100}px;
+  text-align: center;
 `;
 
 export const StyledTD = styled.td<Cell>`
@@ -28,4 +29,5 @@ export const StyledTD = styled.td<Cell>`
 	background-color: #fff;
 	border: 1px solid #ddd;
 	min-width: ${({ columnSpan }) => columnSpan * 100}px;
+	text-align: center;
 `;
