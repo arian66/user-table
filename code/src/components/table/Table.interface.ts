@@ -1,6 +1,7 @@
 export interface Header {
 	name: string;
 	label: string;
+	columnSpan: number;
 }
 
 interface TableRow {

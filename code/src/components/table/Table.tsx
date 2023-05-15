@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Header, TableProps } from "./Table.interface";
+import { StyledTable, StyledTH, StyledTD, StyledTR } from "./Table.style";
 
 const Table: React.FC<TableProps> = (props) => {
 	const { headers, data } = props;
@@ -37,27 +38,32 @@ const Table: React.FC<TableProps> = (props) => {
 	});
 
 	return (
-		<table>
+		<StyledTable>
 			<thead>
-				<tr>
+				<StyledTR>
 					{headers.map((header, index) => (
-						<th key={index}>
+						<StyledTH key={index} columnSpan={header.columnSpan}>
 							{header.label}
 							<button onClick={() => handleSort(header)}>sort</button>
-						</th>
+						</StyledTH>
 					))}
-				</tr>
+				</StyledTR>
 			</thead>
 			<tbody>
 				{sortedData.map((row, rowIndex) => (
-					<tr key={rowIndex}>
+					<StyledTR key={rowIndex}>
 						{headers.map((header, columnIndex) => (
-							<td key={`${rowIndex}-${columnIndex}`}>{row[header.name]}</td>
+							<StyledTD
+								key={`${rowIndex}-${columnIndex}`}
+								columnSpan={header.columnSpan}
+							>
+								{row[header.name]}
+							</StyledTD>
 						))}
-					</tr>
+					</StyledTR>
 				))}
 			</tbody>
-		</table>
+		</StyledTable>
 	);
 };
 
