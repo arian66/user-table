@@ -26,6 +26,12 @@
       ],
       "config/*": [
         "config/*"
+      ],
+      "components/*": [
+        "components/*"
+      ],
+      "features/*": [
+        "features/*"
       ]
     }
   },
