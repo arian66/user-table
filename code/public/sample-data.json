@@ -1,0 +1,153 @@
+{
+	"companyInfo": {
+		"companyName": "Wilderman - Reilly",
+		"companyMotto": "value-added incentivize interfaces",
+		"companyEst": "2014-02-28T21:31:06.322Z"
+	},
+	"employees": [
+		{
+			"id": "ec8d27a0-57b3-4262-9bbd-fe29316cc8ce",
+			"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/ateneupopular/128.jpg",
+			"firstName": "Aidan",
+			"lastName": "Windler",
+			"jobTitle": "Forward Implementation Manager",
+			"contactNo": "0447 174 334",
+			"address": "Sophie Ridge North Ryan, Victoria",
+			"age": 57,
+			"bio": "Repellat aut deserunt. Qui rerum accusamus inventore nulla provident minima aspernatur aliquid. Ea aut animi blanditiis. Veniam ad sint tenetur odio dignissimos in praesentium consequatur.",
+			"dateJoined": "2023-01-10T08:07:22.762Z"
+		},
+		{
+			"id": "9e4ccb3f-a07d-4419-be86-30362501679c",
+			"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/sachacorazzi/128.jpg",
+			"firstName": "Leo",
+			"lastName": "Cummings",
+			"jobTitle": "Lead Configuration Designer",
+			"contactNo": "0410 741 570",
+			"address": "Bauch Station St Port Stephanie, Tasmania",
+			"age": 50,
+			"bio": "Accusantium suscipit autem. Quasi aut ut et dolorem. Amet error nam dolorem ut excepturi expedita vero. Autem et cumque.",
+			"dateJoined": "2018-05-26T03:52:30.519Z"
+		},
+		{
+			"id": "4ee6627b-aed7-4b07-92b3-197ca358a3ef",
+			"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/xamorep/128.jpg",
+			"firstName": "Charlie",
+			"lastName": "Moore",
+			"jobTitle": "Investor Tactics Producer",
+			"contactNo": "0435 441 894",
+			"address": "Olivia Avenue Alyssaland, Queensland",
+			"age": 42,
+			"bio": "In nihil ut aliquid maxime. Iure molestiae qui veritatis a quasi sed blanditiis non. Facere ullam aperiam aspernatur magnam dolorem amet inventore rem nemo. Quaerat natus sint. Porro qui voluptatem et sit sed non maiores. Voluptate minus exercitationem culpa.",
+			"dateJoined": "2017-08-25T13:53:02.534Z"
+		},
+		{
+			"id": "91ad3b55-f69d-449e-9d78-0b175d0e86f9",
+			"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/kkusaa/128.jpg",
+			"firstName": "Nathan",
+			"lastName": "Doyle",
+			"jobTitle": "Customer Interactions Strategist",
+			"contactNo": "0436 873 560",
+			"address": "West Parade South Patrickhaven, South Australia",
+			"age": 47,
+			"bio": "Omnis modi eum et. Hic necessitatibus odio voluptas sint perferendis. In sunt est tempore autem. Aperiam aspernatur laudantium magnam error commodi ut blanditiis occaecati excepturi. Corporis velit voluptas voluptatum omnis quisquam quis nostrum. Asperiores quia voluptates recusandae distinctio repellat et.",
+			"dateJoined": "2023-01-01T20:36:19.337Z"
+		},
+		{
+			"id": "dd2264eb-f82c-43f5-a415-6d7909d1f5a3",
+			"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/christianoliff/128.jpg",
+			"firstName": "George",
+			"lastName": "Kulas",
+			"jobTitle": "Dynamic Factors Assistant",
+			"contactNo": "0444 442 088",
+			"address": "Lockman Station St Lake Callum, Northern Territory",
+			"age": 34,
+			"bio": "Voluptate consequuntur sed quas quisquam. Ut dignissimos velit. Est temporibus necessitatibus et qui consequuntur dolores vero. Neque dolorem perspiciatis culpa dolorem. Voluptas qui facilis adipisci.",
+			"dateJoined": "2020-09-06T12:41:31.377Z"
+		},
+		{
+			"id": "8c936bf1-5f88-466e-9276-f720e2ce2538",
+			"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mattbilotti/128.jpg",
+			"firstName": "Callum",
+			"lastName": "Grant",
+			"jobTitle": "Dynamic Markets Engineer",
+			"contactNo": "0437 221 651",
+			"address": "Hills Crescent Lilybury, New South Wales",
+			"age": 35,
+			"bio": "Commodi recusandae maxime dolorem aut. Corrupti repellendus sunt voluptatem corporis corporis totam mollitia. Eaque molestias voluptate. Qui velit cumque id eveniet eum ut praesentium quasi. Rerum corporis quibusdam.",
+			"dateJoined": "2021-10-16T21:33:48.578Z"
+		},
+		{
+			"id": "2db8b7c5-7a59-465b-ae8c-7e05ac45acee",
+			"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/andrea211087/128.jpg",
+			"firstName": "James",
+			"lastName": "Douglas",
+			"jobTitle": "Customer Group Director",
+			"contactNo": "0406 243 907",
+			"address": "Eve Knoll Port Jack, Queensland",
+			"age": 24,
+			"bio": "Ut in alias. Tempore consectetur rerum nemo cupiditate iste dolorem neque in. Quos non autem deserunt in qui quo. Labore et quam. Consequatur eaque aliquid.",
+			"dateJoined": "2021-08-08T02:31:29.874Z"
+		},
+		{
+			"id": "4138215c-5339-4566-89c6-f604ff37c867",
+			"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/sachacorazzi/128.jpg",
+			"firstName": "Jack",
+			"lastName": "West",
+			"jobTitle": "Direct Research Orchestrator",
+			"contactNo": "0461 015 761",
+			"address": "Lachlan Terrace Kreigermouth, Victoria",
+			"age": 21,
+			"bio": "Et nostrum pariatur expedita nostrum pariatur aut. Omnis quidem voluptas eveniet est quod ut non neque rerum. Et tenetur sed ut eos accusamus vel.",
+			"dateJoined": "2022-09-08T02:01:46.579Z"
+		},
+		{
+			"id": "a6ab77bc-25c6-4298-9fba-a904bf447072",
+			"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/vc27/128.jpg",
+			"firstName": "Adam",
+			"lastName": "Marvin",
+			"jobTitle": "International Interactions Coordinator",
+			"contactNo": "0472 607 337",
+			"address": "Smitham Lane Johnstonstad, Queensland",
+			"age": 46,
+			"bio": "Eum voluptatem dolor sit velit sed aut est qui ratione. Maxime qui aut est reprehenderit rem vel voluptatum illo consequatur. Corrupti quia quaerat id eum. Nobis hic vel natus facilis omnis placeat.",
+			"dateJoined": "2017-06-04T04:33:49.388Z"
+		},
+		{
+			"id": "ad48150c-162f-4f49-a575-c1bf8e6faf35",
+			"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mattbilotti/128.jpg",
+			"firstName": "Sophie",
+			"lastName": "Stark",
+			"jobTitle": "Senior Division Assistant",
+			"contactNo": "0445 634 286",
+			"address": "Jacob Summit East Clairetown, Queensland",
+			"age": 27,
+			"bio": "Necessitatibus consequatur pariatur est ut qui quae blanditiis. Facere molestias consequatur quisquam qui suscipit quae aspernatur. Placeat ab vero fugit molestiae incidunt eos et. Quia sed molestias rerum porro.",
+			"dateJoined": "2015-06-22T15:30:07.330Z"
+		},
+		{
+			"id": "97459f1f-332d-440f-bdad-1040ec1af1cb",
+			"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/wesleytrankin/128.jpg",
+			"firstName": "George",
+			"lastName": "Greenfelder",
+			"jobTitle": "Future Operations Orchestrator",
+			"contactNo": "0465 686 350",
+			"address": "Levi Parade Loweview, Victoria",
+			"age": 45,
+			"bio": "Nesciunt numquam consequatur veritatis aspernatur minus quis quisquam quos. Quod similique porro. Omnis architecto enim odit tempora libero repellendus molestiae. Eos et et voluptate deserunt eveniet quibusdam quo architecto.",
+			"dateJoined": "2013-09-28T13:12:14.293Z"
+		},
+		{
+			"id": "29f4b60c-78f8-46da-9430-37ba999efc69",
+			"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/reideiredale/128.jpg",
+			"firstName": "Finn",
+			"lastName": "Baumbach",
+			"jobTitle": "Lead Configuration Manager",
+			"contactNo": "0431 162 703",
+			"address": "Spencer Meadow New Mitchell, Victoria",
+			"age": 18,
+			"bio": "Sed quaerat modi expedita aut expedita nisi. Quia vel ipsam placeat aut eum reprehenderit amet voluptatem omnis. Eaque et ut hic voluptatum. Magni iste reiciendis deleniti quis itaque. Iure unde blanditiis quia ullam fugit dolorum et rerum quidem.",
+			"dateJoined": "2020-06-12T06:48:45.669Z"
+		}
+	]
+}
