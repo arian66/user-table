@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 import Table from "components/table/Table";
-import { User } from "./Users.interface";
+import { IUsers, IMappedUserForTable } from "./Users.interface";
 import usePagination from "components/pagination/usePagination";
 import Pagination from "components/pagination/Pagination";
-import UserSearch from "./UserSearch";
+import UserSearch from "./components/user-search/UserSearch";
+import { modalController } from "components/modal/ModalController";
+import {mapDataToTable} from './utils/usersHelper'
 
 const headers = [
 	{ name: "id", label: "Id", columnSpan: 1 },
@@ -13,35 +15,43 @@ const headers = [
 ];
 
 const Users = () => {
-	const [data, setData] = useState([]);
-	const [filteredData, SetFilteredData] = useState([]);
+	const [data, setData] = useState<IUsers>();
+	const [filteredData, SetFilteredData] = useState<IMappedUserForTable[]>();
+
+
+	const handleUserClick = useCallback( (id: string) => {
+		const user = data?.find( user => user.id === id)
+		console.log(user, id)
+		modalController.open(<h1>{user?.firstName}</h1>)
+	}, [data])
+
+	const mappedData = useMemo(() => {
+		if (data) {
+			return mapDataToTable(data, handleUserClick);
+		}
+		return [];
+	}, [data, handleUserClick]);
+
 
 	useEffect(() => {
 		fetch("/sample-data.json")
 			.then((res) => res.json())
-			.then((res) =>
-				res?.employees.map((user: User) => ({
-					name: user.firstName + user.lastName,
-					id: `${user.id.substring(0, 4)}...`,
-					contactNo: user.contactNo,
-					address: user.address,
-				}))
-			)
 			.then((res) => {
-				setData(res);
-				SetFilteredData(data);
+				setData(res.employees);
 			});
 	}, []);
 
 	const itemsPerPage = 8;
-	const totalPages = Math.ceil(data.length / itemsPerPage);
+	const totalPages = filteredData
+		? Math.ceil(filteredData.length / itemsPerPage)
+		: 0;
 
 	const { currentPage, setCurrentPage } = usePagination({
 		totalPages,
 	});
 
 	const filterData = (query: string) => {
-		const filteredData = data.filter((row) =>
+		const filteredData = mappedData?.filter((row: any) =>
 			Object.values(row).some((value: any) =>
 				value.toString().toLowerCase().includes(query.toLowerCase())
 			)
@@ -49,7 +59,11 @@ const Users = () => {
 		SetFilteredData(filteredData);
 	};
 
-	const paginatedData = filteredData.slice(
+	useEffect(() => {
+		SetFilteredData(mappedData);
+	}, [mappedData]);
+
+	const paginatedData = filteredData?.slice(
 		(currentPage - 1) * itemsPerPage,
 		currentPage * itemsPerPage
 	);
@@ -62,7 +76,7 @@ const Users = () => {
 	return (
 		<div className="App">
 			<UserSearch onSearch={handleSearch} />
-			<Table headers={headers} data={paginatedData} />
+			<Table headers={headers} data={paginatedData ?? []} />
 			<Pagination
 				currentPage={currentPage}
 				handlePageChange={setCurrentPage}

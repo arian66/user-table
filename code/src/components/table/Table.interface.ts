@@ -5,7 +5,7 @@ export interface Header {
 }
 
 interface TableRow {
-	[key: string]: string | number;
+	[key: string]: any;
 }
 
 export interface TableProps {

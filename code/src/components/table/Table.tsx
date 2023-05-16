@@ -57,7 +57,9 @@ const Table: React.FC<TableProps> = (props) => {
 								key={`${rowIndex}-${columnIndex}`}
 								columnSpan={header.columnSpan}
 							>
-								{row[header.name]}
+								{typeof row[header.name] === "string"
+									? row[header.name]
+									: row[header.name]()}
 							</StyledTD>
 						))}
 					</StyledTR>

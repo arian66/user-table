@@ -1,4 +1,4 @@
-export interface User {
+export interface IUser {
 	id: string;
 	avatar: string;
 	firstName: string;
@@ -9,4 +9,13 @@ export interface User {
 	age: number;
 	bio: string;
 	dateJoined: string;
+}
+
+export type IUsers = IUser[];
+
+export interface IMappedUserForTable {
+	name: Function;
+	id: string;
+	contactNo: string;
+	address: string;
 }
