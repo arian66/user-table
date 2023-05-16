@@ -5,7 +5,8 @@ import usePagination from "components/pagination/usePagination";
 import Pagination from "components/pagination/Pagination";
 import UserSearch from "./components/user-search/UserSearch";
 import { modalController } from "components/modal/ModalController";
-import {mapDataToTable} from './utils/usersHelper'
+import { mapDataToTable } from "./utils/usersHelper";
+import UserDetails from "./components/user-details/UserDetails";
 
 const headers = [
 	{ name: "id", label: "Id", columnSpan: 1 },
@@ -18,12 +19,25 @@ const Users = () => {
 	const [data, setData] = useState<IUsers>();
 	const [filteredData, SetFilteredData] = useState<IMappedUserForTable[]>();
 
-
-	const handleUserClick = useCallback( (id: string) => {
-		const user = data?.find( user => user.id === id)
-		console.log(user, id)
-		modalController.open(<h1>{user?.firstName}</h1>)
-	}, [data])
+	const handleUserClick = useCallback(
+		(id: string) => {
+			const user = data?.find((user) => user.id === id);
+			if (user) {
+				modalController.open(
+					<UserDetails
+						firstName={user?.firstName}
+						lastName={user.lastName}
+						jobTitle={user.jobTitle}
+						bio={user.bio}
+						avatar={user.avatar}
+						dateJoined={user.dateJoined}
+						age={user.age}
+					/>
+				);
+			}
+		},
+		[data]
+	);
 
 	const mappedData = useMemo(() => {
 		if (data) {
@@ -31,7 +45,6 @@ const Users = () => {
 		}
 		return [];
 	}, [data, handleUserClick]);
-
 
 	useEffect(() => {
 		fetch("/sample-data.json")
