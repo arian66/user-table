@@ -6,14 +6,17 @@ export const mapDataToTable = (
 	handleUserClick: Function
 ): IMappedUserForTable[] => {
 	return users.map((user) => ({
-		name: () => (
-			<UserAvatar
-				name={user.firstName + " " + user.lastName}
-				image={user.avatar}
-				id={user.id}
-				onClick={handleUserClick}
-			/>
-		),
+		name: {
+			value: user.firstName + " " + user.lastName,
+			content: () => (
+				<UserAvatar
+					name={user.firstName + " " + user.lastName}
+					image={user.avatar}
+					id={user.id}
+					onClick={handleUserClick}
+				/>
+			),
+		},
 		id: `${user.id.substring(0, 4)}...`,
 		contactNo: user.contactNo,
 		address: user.address,

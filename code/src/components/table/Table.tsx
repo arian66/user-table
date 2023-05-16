@@ -26,13 +26,20 @@ const Table: React.FC<TableProps> = (props) => {
 
 	const sortedData = [...data].sort((a, b) => {
 		if (sortConfig.key && sortConfig.direction) {
+			const aValue =
+				typeof a[sortConfig.key] === "object" &&
+				a[sortConfig.key].hasOwnProperty("value")
+					? a[sortConfig.key].value
+					: a[sortConfig.key];
+			const bValue =
+				typeof b[sortConfig.key] === "object" &&
+				b[sortConfig.key].hasOwnProperty("value")
+					? b[sortConfig.key].value
+					: b[sortConfig.key];
+
 			return sortConfig.direction === "ascending"
-				? a[sortConfig.key]
-						.toString()
-						.localeCompare(b[sortConfig.key].toString())
-				: b[sortConfig.key]
-						.toString()
-						.localeCompare(a[sortConfig.key].toString());
+				? aValue.toString().localeCompare(bValue.toString())
+				: bValue.toString().localeCompare(aValue.toString());
 		}
 		return 0;
 	});
@@ -44,7 +51,14 @@ const Table: React.FC<TableProps> = (props) => {
 					{headers.map((header, index) => (
 						<StyledTH key={index} columnSpan={header.columnSpan}>
 							{header.label}
-							<button onClick={() => handleSort(header)}>sort</button>
+							<button
+								onClick={() => handleSort(header)}
+								className={
+									sortConfig.key === header.name
+										? (sortConfig.direction as string)
+										: "ascending"
+								}
+							/>
 						</StyledTH>
 					))}
 				</StyledTR>
@@ -59,7 +73,7 @@ const Table: React.FC<TableProps> = (props) => {
 							>
 								{typeof row[header.name] === "string"
 									? row[header.name]
-									: row[header.name]()}
+									: row[header.name].content()}
 							</StyledTD>
 						))}
 					</StyledTR>

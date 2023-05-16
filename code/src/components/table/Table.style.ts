@@ -21,7 +21,31 @@ export const StyledTH = styled.th<Cell>`
 	background-color: #f5f5f5;
 	border: 1px solid #ddd;
 	min-width: ${({ columnSpan }) => columnSpan * 100}px;
-  text-align: center;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	& button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		font-size: 14px;
+		padding: 0;
+		margin-left: 4px;
+		transition: transform 0.3s ease-in-out;
+		&.ascending::before {
+			content: "▲";
+		}
+		&.descending::before {
+			content: "▼";
+		}
+		&:focus {
+			outline: none;
+		}
+	}
 `;
 
 export const StyledTD = styled.td<Cell>`

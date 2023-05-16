@@ -13,8 +13,13 @@ export interface IUser {
 
 export type IUsers = IUser[];
 
+export interface INameTableField {
+	value: string;
+	content: Function;
+}
+
 export interface IMappedUserForTable {
-	name: Function;
+	name: INameTableField;
 	id: string;
 	contactNo: string;
 	address: string;
