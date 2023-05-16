@@ -8,7 +8,7 @@ export const mapDataToTable = (
 	return users.map((user) => ({
 		name: () => (
 			<UserAvatar
-				name={user.firstName}
+				name={user.firstName + " " + user.lastName}
 				image={user.avatar}
 				id={user.id}
 				onClick={handleUserClick}

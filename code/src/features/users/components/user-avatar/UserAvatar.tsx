@@ -1,3 +1,6 @@
+import Image from "components/UI/image/Image";
+import { Container, Button } from "./UserAvatar.style";
+import Typography from "components/UI/typography/Typography";
 interface UserAvatarProps {
 	id: string;
 	name: string;
@@ -16,12 +19,18 @@ const UserAvatar: React.FC<UserAvatarProps> = ({
 	};
 
 	return (
-		<div>
-			<button onClick={handleClick}>
-				<img src={image} alt={name} />
-			</button>
-			<span>{name}</span>
-		</div>
+		<Container>
+			<Button onClick={handleClick}>
+				<Image
+					src={image}
+					alt={name}
+					defaultSrc="assets/avatar.jpg"
+					width={"30px"}
+					height={"30px"}
+				/>
+			</Button>
+			<Typography>{name}</Typography>
+		</Container>
 	);
 };
 
