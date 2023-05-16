@@ -7,6 +7,7 @@ import UserSearch from "./components/user-search/UserSearch";
 import { modalController } from "components/modal/ModalController";
 import { mapDataToTable } from "./utils/usersHelper";
 import UserDetails from "./components/user-details/UserDetails";
+import { PaginationContainer } from "./Users.style";
 
 const headers = [
 	{ name: "id", label: "Id", columnSpan: 1 },
@@ -90,11 +91,13 @@ const Users = () => {
 		<div className="App">
 			<UserSearch onSearch={handleSearch} />
 			<Table headers={headers} data={paginatedData ?? []} />
-			<Pagination
-				currentPage={currentPage}
-				handlePageChange={setCurrentPage}
-				totalPages={totalPages}
-			/>
+			<PaginationContainer>
+				<Pagination
+					currentPage={currentPage}
+					handlePageChange={setCurrentPage}
+					totalPages={totalPages}
+				/>
+			</PaginationContainer>
 		</div>
 	);
 };

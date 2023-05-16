@@ -1,4 +1,9 @@
 import React from "react";
+import {
+	ControlButton,
+	PageButton,
+	PaginationContainer,
+} from "./Paginatoin.style";
 
 interface PaginationProps {
 	currentPage: number;
@@ -19,31 +24,33 @@ const Pagination: React.FC<PaginationProps> = ({
 		(_, i) => i + startPage
 	);
 	return (
-		<div>
-			<button
+		<PaginationContainer>
+			<ControlButton
 				onClick={() => handlePageChange(currentPage - 1)}
 				disabled={currentPage === 1}
+				transparent
 			>
 				Prev
-			</button>
+			</ControlButton>
 
 			{pageNumbers.map((pageNumber) => (
-				<button
+				<PageButton
 					key={pageNumber}
 					onClick={() => handlePageChange(pageNumber)}
 					disabled={pageNumber === currentPage}
 				>
 					{pageNumber}
-				</button>
+				</PageButton>
 			))}
 
-			<button
+			<ControlButton
 				onClick={() => handlePageChange(currentPage + 1)}
 				disabled={currentPage === totalPages}
+				transparent
 			>
 				Next
-			</button>
-		</div>
+			</ControlButton>
+		</PaginationContainer>
 	);
 };
 
