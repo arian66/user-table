@@ -5,13 +5,16 @@ import Users from "features/users/Users";
 import { ModalGenerator } from "components/modal/ModalController";
 import { GlobalStyles } from "./layouts/GlobalStyles";
 import Layout from "layouts/Layout";
+import { DataProvider } from "features/data-loader/DataContext";
 
 function App() {
 	return (
 		<ThemeProvider theme={theme}>
+			<DataProvider>
 			<Layout>
 				<Users />
 			</Layout>
+			</DataProvider>
 			<ModalGenerator />
 			<GlobalStyles />
 		</ThemeProvider>

@@ -8,6 +8,8 @@ import { modalController } from "components/modal/ModalController";
 import { mapDataToTable } from "./utils/usersHelper";
 import UserDetails from "./components/user-details/UserDetails";
 import { PaginationContainer } from "./Users.style";
+import { useData } from "features/data-loader/DataContext";
+import Typography from "components/UI/typography/Typography";
 
 const headers = [
 	{ name: "id", label: "Id", columnSpan: 1 },
@@ -19,6 +21,8 @@ const headers = [
 const Users = () => {
 	const [data, setData] = useState<IUsers>();
 	const [filteredData, SetFilteredData] = useState<IMappedUserForTable[]>();
+
+	const { data: apiData, loading } = useData();
 
 	const handleUserClick = useCallback(
 		(id: string) => {
@@ -48,12 +52,10 @@ const Users = () => {
 	}, [data, handleUserClick]);
 
 	useEffect(() => {
-		fetch("/sample-data.json")
-			.then((res) => res.json())
-			.then((res) => {
-				setData(res.employees);
-			});
-	}, []);
+		if (apiData) {
+			setData(apiData.employees);
+		}
+	}, [apiData]);
 
 	const itemsPerPage = 8;
 	const totalPages = filteredData
@@ -88,16 +90,22 @@ const Users = () => {
 	};
 
 	return (
-		<div className="App">
-			<UserSearch onSearch={handleSearch} />
-			<Table headers={headers} data={paginatedData ?? []} />
-			<PaginationContainer>
-				<Pagination
-					currentPage={currentPage}
-					handlePageChange={setCurrentPage}
-					totalPages={totalPages}
-				/>
-			</PaginationContainer>
+		<div>
+			{loading ? (
+				<Typography variant="subheader">Loading ...</Typography>
+			) : (
+				<>
+					<UserSearch onSearch={handleSearch} />
+					<Table headers={headers} data={paginatedData ?? []} />
+					<PaginationContainer>
+						<Pagination
+							currentPage={currentPage}
+							handlePageChange={setCurrentPage}
+							totalPages={totalPages}
+						/>
+					</PaginationContainer>
+				</>
+			)}
 		</div>
 	);
 };
