@@ -4,11 +4,14 @@ import { theme } from "./layouts/theme";
 import Users from "features/users/Users";
 import { ModalGenerator } from "components/modal/ModalController";
 import { GlobalStyles } from "./layouts/GlobalStyles";
+import Layout from "layouts/Layout";
 
 function App() {
 	return (
 		<ThemeProvider theme={theme}>
-			<Users />
+			<Layout>
+				<Users />
+			</Layout>
 			<ModalGenerator />
 			<GlobalStyles />
 		</ThemeProvider>
