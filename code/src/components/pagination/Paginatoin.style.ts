@@ -17,4 +17,5 @@ width: 30px;
 font-weight: 700;
 font-size: 20px;
 padding: 0.5rem;
+cursor: pointer;
 `

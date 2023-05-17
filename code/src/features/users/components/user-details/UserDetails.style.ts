@@ -2,6 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 	display: flex;
+	width: 600px;
+	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+		width: 100%;
+		align-items: start;
+		height: 100%;
+	}
 `;
 
 export const ImageContainer = styled.div`
@@ -14,13 +20,11 @@ export const Image = styled.img`
 
 export const TextContainer = styled.div`
 	width: 80%;
-	padding: 0 20px;
-`;
-
-export const Title = styled.h2`
-	margin-top: 0;
-`;
-
-export const Text = styled.p`
-	margin: 0;
+	padding: 2rem;
+	& .name {
+		border-bottom: 2px solid ${({ theme }) => theme.palette.secondary.main};
+	}
+	& .content {
+		padding: 1rem 0;
+	}
 `;

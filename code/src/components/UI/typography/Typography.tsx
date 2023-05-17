@@ -5,12 +5,14 @@ interface StyledTypographyProps {
 	variant: "header" | "subheader" | "body";
 	textAlign?: "left" | "right" | "center";
 	error?: boolean;
+	bold?: boolean;
 }
 
 const StyledTypography = styled.div<StyledTypographyProps>`
 	text-align: ${({ textAlign }) => textAlign && textAlign};
-	color: ${({error, theme}) => error ? theme.palette.error.main : 'inherit'};
-	${({ variant }) => {
+	color: ${({ error, theme }) =>
+		error ? theme.palette.error.main : "inherit"};
+	${({ variant, bold }) => {
 		switch (variant) {
 			case "header":
 				return css`
@@ -30,7 +32,7 @@ const StyledTypography = styled.div<StyledTypographyProps>`
 			default:
 				return css`
 					font-size: 1rem;
-					font-weight: 400;
+					font-weight: ${bold ? 700 : 400};
 					line-height: 1.5;
 					margin: 0;
 				`;
@@ -43,6 +45,8 @@ interface TypographyProps {
 	textAlign?: "left" | "right" | "center";
 	error?: boolean;
 	children: ReactNode;
+	bold?: boolean;
+	className?: string;
 }
 
 const Typography: React.FC<TypographyProps> = ({
@@ -50,6 +54,8 @@ const Typography: React.FC<TypographyProps> = ({
 	textAlign,
 	children,
 	error,
+	bold,
+	className,
 }) => {
 	const renderContent = () => {
 		switch (variant) {
@@ -64,7 +70,13 @@ const Typography: React.FC<TypographyProps> = ({
 	};
 
 	return (
-		<StyledTypography variant={variant} textAlign={textAlign} error={error}>
+		<StyledTypography
+			variant={variant}
+			textAlign={textAlign}
+			error={error}
+			bold={bold}
+			className={className}
+		>
 			{renderContent()}
 		</StyledTypography>
 	);

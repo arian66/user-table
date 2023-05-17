@@ -1,15 +1,18 @@
 import React from "react";
 import { IUser } from "../../Users.interface";
+import Image from "components/UI/image/Image";
+import Typography from "components/UI/typography/Typography";
+
 import {
 	Container,
 	ImageContainer,
-	Image,
 	TextContainer,
-	Title,
-	Text,
 } from "./UserDetails.style";
 
-interface UserDetailsProps extends Omit<IUser, "id" | "address" | "contactNo"> {}
+import { getDate } from "utils/helper-functions";
+
+interface UserDetailsProps
+	extends Omit<IUser, "id" | "address" | "contactNo"> {}
 
 const UserDetails: React.FC<UserDetailsProps> = ({
 	firstName,
@@ -17,20 +20,28 @@ const UserDetails: React.FC<UserDetailsProps> = ({
 	jobTitle,
 	bio,
 	avatar,
-  age,
-  dateJoined
+	age,
+	dateJoined,
 }) => {
 	return (
 		<Container>
 			<ImageContainer>
-				<Image src={avatar} alt={firstName} />
-				<Text>{jobTitle}</Text>
-				<Text>{age}</Text>
-				<Text>{dateJoined}</Text>
+				<Image
+					src={avatar}
+					alt={firstName}
+					defaultSrc="/assets/avatar.jpg"
+					width="100px"
+					height="100px"
+				/>
+				<Typography bold>{jobTitle}</Typography>
+				<Typography>age: {age}</Typography>
+				<Typography>date joined: {getDate(dateJoined)}</Typography>
 			</ImageContainer>
 			<TextContainer>
-				<Title>{firstName + " " + lastName}</Title>
-				<Text>{bio}</Text>
+				<Typography variant="subheader" className="name">
+					{firstName + " " + lastName}
+				</Typography>
+				<Typography className="content">{bio}</Typography>
 			</TextContainer>
 		</Container>
 	);
