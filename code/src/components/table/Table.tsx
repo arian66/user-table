@@ -53,6 +53,7 @@ const Table: React.FC<TableProps> = (props) => {
 							{header.label}
 							<button
 								onClick={() => handleSort(header)}
+								data-testid={`sort-button-${header.name}`}
 								className={
 									sortConfig.key === header.name
 										? (sortConfig.direction as string)

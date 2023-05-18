@@ -68,9 +68,10 @@ const Users = () => {
 
 	const filterData = (query: string) => {
 		const filteredData = mappedData?.filter((row: any) =>
-			Object.values(row).some((value: any) =>
-				value.toString().toLowerCase().includes(query.toLowerCase())
-			)
+			Object.values(row).some((cell: any) => {
+				const value = typeof cell === "string" ? cell : cell.value;
+				return value.toString().toLowerCase().includes(query.toLowerCase());
+			})
 		);
 		SetFilteredData(filteredData);
 	};

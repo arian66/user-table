@@ -20,7 +20,7 @@ const UserAvatar: React.FC<UserAvatarProps> = ({
 
 	return (
 		<Container>
-			<Button onClick={handleClick}>
+			<Button onClick={handleClick} data-testid={`avatar-${name}`}>
 				<Image
 					src={image}
 					alt={name}
